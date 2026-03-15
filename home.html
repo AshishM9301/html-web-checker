@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="global.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Home - HTML Web Checker</title>
+  </head>
+  <body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold mb-2 text-fuchsia-400">HTML Web Checker</h1>
+        <p class="text-gray-400">Check any website's HTML structure instantly</p>
+      </header>
+
+      <main class="max-w-2xl mx-auto">
+        <form id="check-form" class="flex gap-4 mb-8">
+          <input
+            type="url"
+            id="url-input"
+            placeholder="Enter website URL..."
+            class="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-fuchsia-500 focus:outline-none text-white placeholder-gray-500"
+            required
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-700 rounded-lg font-semibold transition-colors"
+          >
+            Check
+          </button>
+        </form>
+
+        <div id="result" class="hidden">
+          <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+            <h2 class="text-xl font-semibold mb-4 text-fuchsia-400">Results</h2>
+            <pre id="html-content" class="bg-gray-900 p-4 rounded overflow-x-auto text-sm text-gray-300 whitespace-pre-wrap"></pre>
+          </div>
+        </div>
+
+        <div id="loading" class="hidden text-center py-8">
+          <div class="loader mx-auto"></div>
+          <p class="text-gray-400 mt-4">Fetching HTML...</p>
+        </div>
+
+        <div id="error" class="hidden bg-red-900/50 border border-red-700 rounded-lg p-4 text-red-300"></div>
+      </main>
+    </div>
+
+    <script src="script-home.js"></script>
+  </body>
+</html>
