@@ -28,14 +28,7 @@ async function detectBot(req) {
 }
 
 // Main route - serve different HTML based on bot detection
-app.get('/', async (req, res) => {
-  const isBot = await detectBot(req);
-  if (isBot) {
-    res.sendFile(path.join(__dirname, 'agent.html'));
-  } else {
-    res.sendFile(path.join(__dirname, 'home.html'));
-  }
-});
+app.use(express.static(__dirname, { index: false }));
 
 // Explicit routes for redirect fallback
 app.get('/agent', (req, res) => {
