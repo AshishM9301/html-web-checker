@@ -27,8 +27,11 @@ async function detectBot(req) {
   return isBot(userAgent);
 }
 
+console.log(detectBot(req));
+
 // Main route - serve different HTML based on bot detection
 app.use(express.static(__dirname, { index: false }));
+
 
 // Explicit routes for redirect fallback
 app.get('/agent', (req, res) => {
