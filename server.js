@@ -23,11 +23,12 @@ async function detectBot(req) {
     console.log('External API failed, using local detection');
   }
   
+  console.log(detectBot(req));
+  
   // Option 2: Fallback to local User-Agent detection
   return isBot(userAgent);
 }
 
-console.log(detectBot(req));
 
 // Main route - serve different HTML based on bot detection
 app.use(express.static(__dirname, { index: false }));
